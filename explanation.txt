@@ -1,0 +1,28 @@
+# 22:49 28/03/2022
+# ----------------
+#   Explanation:
+# ----------------
+
+After importing all of the PyQt class and setting up the DisplaySurvey class, we begin creating some labels, setting up the text for the ratings labels, and create close_btn.
+	The application consists of three separate QHBoxLayout objects -title_h_box, rationgs_h_box, and cb_h_box and single QVBooxLayout, v_box for the GUI, v_box will act as the container for all of the other widgets and layout arranged vertically from top to bottom
+
+# Combining Box Layouts and Arranging Widgetd:
+#---------------------------------------------
+When we say combibibg layouts, what that really means is nestiong one type of box layout inside of another type to get the benegis of vertical or horizontal layouts.
+The following bit of code shows how to create QHBoxLayout object and add a widgets to is:
+	# Create hozitontal layouts:
+	title_horizontal_box = QHBoxLayout()
+	title_horizontal_box.addStretch()
+	title_horizontal_box.addWidget(title)
+	title_horizontal_box.addStretch()
+
+[*] addStretch():
+	acts like an invisible widget that can be used to help arrage widgets in the layout manager.Widgets in QHBoxLayout are organized to left to right,So in title_horizontal_box, addStretch() is add to the left,title in the middle, and another AddStretch() to the right. this center the title in the title_horizontal_box.
+
+	To add the rating labels and checkboxes to the window, a separate QHBoxLayout is created for each one. Each widget add the space out using the setSpacing() method, which is useful for creating a fixed amount of the space between widgets inside of a layout.
+	
+	Adding layouts or widget to a parent layout is as simple as changing the method called:
+
+	v_box = QVBoxLayout() 			#=> create vertical layout
+	V_box.addLayout(title_horizontal_box) #=> add horizontal layout
+	V_box.addWiget(question)			#=> add Widget
